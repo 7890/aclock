@@ -57,7 +57,7 @@ mainMethod()
 	"$S" saveat 3
 	"$S" saveat 4
 
-	javac -cp .:jlo.jar:jna-3.3.0.jar OClock.java
+	javac -source 1.6 -cp .:jlo.jar:jna-3.3.0.jar OClock.java
 
 	#ls -ltr $tmp_dir
 

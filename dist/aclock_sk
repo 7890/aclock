@@ -59,7 +59,7 @@ mainMethod()
 	"$S" saveat 5
 	"$S" saveat 6
 
-	javac -cp .:jlo.jar:jna-3.3.0.jar OClock.java
+	javac -source 1.6 -cp .:jlo.jar:jna-3.3.0.jar OClock.java
 
 	#compile sk.c
 	make >/dev/null 2>&1
