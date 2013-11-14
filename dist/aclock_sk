@@ -62,7 +62,7 @@ mainMethod()
 	javac -cp .:jlo.jar:jna-3.3.0.jar OClock.java
 
 	#compile sk.c
-	make 2>&1 >/dev/null
+	make >/dev/null 2>&1
 
 	#ls -ltr $tmp_dir
 
@@ -71,16 +71,21 @@ mainMethod()
 	#if sk is here
 	if [ -f sk ]
 	then
-		#use sk
+		echo "using sendkeys"
 		$TERM -e "$tmp_dir/sk 6677 localhost 6789" &
 	else
-		#fall back to sendkeys.sh
+		#fallback
+		echo "using sendkeys.sh"
 		chmod 755 $tmp_dir/sendkeys.sh
 		$TERM $tmp_dir/sendkeys.sh &
-
 	fi
 
-	LD_LIBRARY_PATH=$_LD_LIBRARY_PATH java -cp .:jlo.jar:jna-3.3.0.jar OClock $port
+	if [ -f OClock.class ]
+	then
+		LD_LIBRARY_PATH=$_LD_LIBRARY_PATH java -cp .:jlo.jar:jna-3.3.0.jar OClock $port	
+	else
+		echo "compilation failed."
+	fi
 
 	echo ""
 	echo -n "cleaning up..."

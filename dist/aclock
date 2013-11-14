@@ -65,8 +65,13 @@ mainMethod()
 	
 	chmod 755 $tmp_dir/sendkeys.sh
 	$TERM $tmp_dir/sendkeys.sh &
-
-	LD_LIBRARY_PATH=$_LD_LIBRARY_PATH java -cp .:jlo.jar:jna-3.3.0.jar OClock $port
+        
+	if [ -f OClock.class ]
+	then
+		LD_LIBRARY_PATH=$_LD_LIBRARY_PATH java -cp .:jlo.jar:jna-3.3.0.jar OClock $port
+	else
+		echo "compilation failed."
+	fi
 
 	echo ""
 	echo -n "cleaning up..."
