@@ -857,6 +857,7 @@ public class OClock
 			}
 			else if(path.equals("/set"))
 			{
+				s=msg.getString(0);
 				ret=setClock(s);
 			}
 			else if(path.equals("/delim"))
