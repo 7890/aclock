@@ -101,6 +101,9 @@ OSC Messages understood by aclock:
   3) s: left delim for edited components
   4) s: right delim for edited components
 
+/inplace i
+  1) i: 0: off 1: on (print updated clock in place vs. on new line)
+
 for more info, see src/OClock.java
 
 Advanced:

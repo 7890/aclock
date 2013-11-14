@@ -797,6 +797,10 @@ public class OClock
 		//oscsend localhost 9999 /delim ssss '\\[' '\\]' '\\(' '\\)'
 		srv_.addMethod("/delim","ssss",ec);
 
+		//output clock on multiple lines or on one line
+		//oscsend localhost 9999 /inplace i 1
+		srv_.addMethod("/inplace","i",ec);
+
 		new Thread()
 		{
 			public void run()
@@ -863,7 +867,20 @@ public class OClock
 				entryDelimEnd=msg.getString(3);
 				ret=true;
 			}
-			
+			else if(path.equals("/inplace"))
+			{
+				int i=msg.getInt(0);
+				if(i==1)
+				{
+					displayInPlace=true;
+				}
+				else
+				{
+					displayInPlace=false;
+				}
+				ret=true;
+			}
+
 			if(!ret)
 			{
 				//println("restoring clock");
