@@ -1,5 +1,8 @@
 ```
 #aclock is a bskt (https://github.com/7890/bskt)
+chmod 755 aclock
+./aclock
+
 #to update aclock:
 
 #source
@@ -21,4 +24,7 @@
 
 #needs java, javac, liblo.so in LD_LIBRARY_PATH (among others)
 #if anything is missing it should be indicated
+
+#aclock_sk includes sk (https://github.com/7890/sendkeys) instead of sendkeys.sh
+
 ```
