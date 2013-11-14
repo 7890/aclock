@@ -2,5 +2,8 @@
 
 #must be started from current/this directory
 
+#set alternative javac here
+jc="`which javac`"
+
 mkdir -p classes
-javac -cp .:lib/jlo.jar:lib/jna-3.3.0.jar -d classes src/OClock.java
+"$jc" -source 1.6 -cp .:lib/jlo.jar:lib/jna-3.3.0.jar -d classes src/OClock.java
