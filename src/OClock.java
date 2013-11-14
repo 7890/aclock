@@ -477,7 +477,7 @@ public class OClock
 			}
 		}
 		//set clock inactive
-		else if(s.equals("q"))
+		else if(s.equals("q") || s.equals("escape"))
 		{
 			checkOngoing();
 			clockActive=false;
@@ -523,19 +523,19 @@ public class OClock
 			standaloneComponents=!standaloneComponents;
 		}
 		//navigate to left component
-		else if(s.equals("d") || s.equals("left"))
+		else if(s.equals("d") || s.equals("arrow_left"))
 		{
 			checkOngoing();
 			selected=selected.left;
 		}
 		//navigate to right component
-		else if(s.equals("g") || s.equals("right"))
+		else if(s.equals("g") || s.equals("arrow_right"))
 		{
 			checkOngoing();
 			selected=selected.right;
 		}
 		//increment component value by 1
-		else if(s.equals("r") || s.equals("up"))
+		else if(s.equals("r") || s.equals("arrow_up"))
 		{
 			entryOngoing=false;
 			additionOngoing=false;
@@ -543,7 +543,7 @@ public class OClock
 			selected.increment();
 		}
 		//decrement component value by 1
-		else if(s.equals("v") || s.equals("down"))
+		else if(s.equals("v") || s.equals("arrow_down"))
 		{
 			entryOngoing=false;
 			additionOngoing=false;
@@ -551,7 +551,7 @@ public class OClock
 			selected.decrement();
 		}
 		//increment component value by 10^(digitcount -1)
-		else if(s.equals("t") || s.equals("pageup"))
+		else if(s.equals("t") || s.equals("page_up"))
 		{
 			entryOngoing=false;
 			additionOngoing=false;
@@ -560,7 +560,7 @@ public class OClock
 			selected.add(stepSize);
 		}
 		//decrement component value by 10^(digitcount -1)
-		else if(s.equals("b") || s.equals("pagedown"))
+		else if(s.equals("b") || s.equals("page_down"))
 		{
 			entryOngoing=false;
 			additionOngoing=false;
@@ -632,7 +632,7 @@ public class OClock
 			resetClock();
 		}
 		//finish entry and/or jump to next component
-		else if(s.equals(".") || s.equals(""))
+		else if(s.equals(".") || s.equals("") || s.equals("enter"))
 		{
 			boolean bOn=false;
 			if(additionOngoing || subtractionOngoing || entryOngoing)
@@ -780,6 +780,9 @@ public class OClock
 		//oscsend localhost 9999 /key s '^'
 		srv_.addMethod("/key","s",ec);
 
+		//compatibility to sk/sendkeys https://github.com/7890/sendkeys
+		srv_.addMethod("/key","is",ec);
+
 		/*
 		send a series of ops
 		example: activate clock for entry, reset all components, 
@@ -827,7 +830,7 @@ public class OClock
 			receiveCount++;
 
 			Message msg=new Message(lo_message);
-			String s=msg.getString(0);
+			String s="";
 
 			String clockSave=getClockStringDigitsOnly();
 			Component selectionSave=selected;
@@ -835,7 +838,18 @@ public class OClock
 
 			if(path.equals("/key"))
 			{
+				// /key s
+				if(argc==1)
+				{
+					s=msg.getString(0);
+				}
+				// /key is
+				else if (argc==2)
+				{
+					s=msg.getString(1);
+				}
 				ret=processAction(s);
+
 			}
 			else if(path.equals("/set"))
 			{

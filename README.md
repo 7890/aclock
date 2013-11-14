@@ -16,6 +16,7 @@ Keyboard Operation (in 2nd terminal):
 
 '^': toggle clock active
 
+'escape' ||
 'q': set clock inactive
 
 'a': set clock active
@@ -24,7 +25,7 @@ Keyboard Operation (in 2nd terminal):
 
 'u': autoselect next component false
 
-'insert' |
+'insert' ||
 'i': toggle autoselect next component setting
 
 'j': autonomous components true (no overflow)
@@ -33,22 +34,22 @@ Keyboard Operation (in 2nd terminal):
 
 'l': toggle autonomous components setting
 
-'left' |
+'arrow_left' ||
 'd': navigate to left component
 
-'right' |
+'arrow_right' ||
 'g': navigate to right component
 
-'up' |
+'arrow_up' ||
 'r': increment component value by 1
 
-'down' |
+'arrow_down' ||
 'v': decrement component value by 1
 
-'pageup' |
+'page_up' ||
 't': increment component value by 10^(max digits -1)
 
-'pagedown' |
+'page_down' ||
 'b': decrement component value by 10^(max digits -1)
 
 'h': navigate to head component (hours)
@@ -65,13 +66,13 @@ Keyboard Operation (in 2nd terminal):
      
 ':': clear all components before and after currently selected
   
-'backspace' |  
+'backspace' ||  
 'o': clear currently selected component
 
-'delete' |
+'delete' ||
 'p': clear all components
 
-'enter' |     
+'enter' ||     
 '.': finish entry, jump to next component (if autoselect next component true)
 
 '+': start addition to currently selected component
@@ -85,6 +86,11 @@ OSC Messages understood by aclock:
 
 /key s
   1) s: key
+
+/key is
+  1) i: int (ignored)
+  2) s: key
+  (sk/sendkeys compatible)
 
 /set s
   1) s: keys

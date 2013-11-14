@@ -70,14 +70,14 @@ do
   read -sn1 a
 
 case "$a" in
-	A) echo_ "up"; send "up";;
-	B) echo_ "down"; send "down";;
-	C) echo_ "right"; send "right";;
-	D) echo_ "left"; send "left";;
+	A) echo_ "up"; send "arrow_up";;
+	B) echo_ "down"; send "arrow_down";;
+	C) echo_ "right"; send "arrow_right";;
+	D) echo_ "left"; send "arrow_left";;
 	2) echo_ "insert"; read -sn1 a; send "insert";;
 	3) echo_ "delete"; read -sn1 a; send "delete";;
-	5) echo_ "pageup"; read -sn1 a; send "pageup";;
-	6) echo_ "pagedown"; read -sn1 a; send "pagedown";;
+	5) echo_ "pageup"; read -sn1 a; send "page_up";;
+	6) echo_ "pagedown"; read -sn1 a; send "page_down";;
 	*) echo_ "UNKNOWN" $a;;
 esac
 
