@@ -6,4 +6,4 @@
 jc="`which javac`"
 
 mkdir -p classes
-"$jc" -source 1.6 -cp .:lib/jlo.jar:lib/jna-3.3.0.jar -d classes src/OClock.java
+"$jc" -source 1.6 -target 1.6 -cp .:lib/jlo.jar:lib/jna-3.3.0.jar -d classes src/OClock.java
