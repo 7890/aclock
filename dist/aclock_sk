@@ -45,7 +45,7 @@ mainMethod()
 	#echo -e "no parameters given and mainMethod not customized."
 	#echo -e "see mainMethod in $0"
 
-	for tool in {oscsend,javac,java,make}; \
+	for tool in {oscsend,javac,java,make,pkg-config}; \
 		do checkAvail "$tool"; done
 
 	tmp_dir=`mktemp -d`
