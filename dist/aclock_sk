@@ -59,7 +59,7 @@ mainMethod()
 	"$S" saveat 5
 	"$S" saveat 6
 
-	javac -source 1.6 -target 1.6 -cp .:jlo.jar:jna-3.3.0.jar OClock.java
+	javac -nowarn -source 1.6 -target 1.6 -cp .:jlo.jar:jna-3.3.0.jar OClock.java
 
 	#compile sk.c
 	make >/dev/null 2>&1
@@ -15790,19 +15790,6 @@ r+u3p9lcx1gUheAsQJb0ooUGWesYS2E0hdZaudb8UoVoKlD6z6+rcrrjfZVNyKcE9dibvRRqSfRC
 pTdzMhTC/zwNadm8aBGkKm3+D6WD/WKbGgAA
 </chunk>
 </item>
-<item name="Makefile" md5="3cff2ff752c2d0f7214b13f488dad14f" size="4.0K" utc="1384395672" type="a /usr/bin/make -f script, ASCII text executable">
-<chunk>
-H4sICOEyhFICA01ha2VmaWxlAK1TS4+bMBA+7/wKL8khHAy7p5ZIqEWUTZG8JIJstz1FjjEP4UCE
-4dB/3zHpprS7l5VqCWvmm/F882Jx6466d4916554IwktAMKQfPJJKQSEDyzYZEajz1wpQvWQ+8Lz
-YJdGD/F3Y5ieq05wBXGS7QPGvsSpMSxXFyfbBIfHIHmF64r3EmkNdXuPMbebJHiMjJNuruohYPsJ
-km3eyJ8agG0P17yWK11JzOzclFR0bVGXhFJRKF5qFFR91AQv1dmwoPGfXN26FWrMJSGUzVB0Jeio
-VEeoOg9VL3mO/XhKsyh7F2crxl5LbVjVbxkjDnVbdABZGvoOwMLJ5ZGcuWh4KQ14eEqZb1XDcNZr
-1y3roRqPjuhO7oeP3p37Ur+FvYyTPX5R6ltDd/o89JhNrR1RWcDiMEqyyLc2O2bBtyjN4m3i30Ea
-sShA/B55cbKEdtjja08dcRlt2Y6eR+Ypqw4W//cA5LLgoxrW0ypchmwDrtffAMwUY8EG2e4McwTc
-LFdhaL9pMwXOAJQvu2ykl/2Z0NlskVMoyds13PQn/BP+CfCKBEfp7L5ukx9rMr0jWAPAL4syooFS
-AwAA
-</chunk>
-</item>
 <item name="OClock.java" md5="9af88d6f95a5654847ad321d36744924" size="20K" utc="1384400652" type="ASCII Java program text">
 <chunk>
 H4sICN5GhFICA09DbG9jay5qYXZhAL0ca3PbNvKz/SsQzrShIlmUrPQRO8qMm+YmnUnqTNzrzF2S
@@ -15885,7 +15872,6 @@ M66dT3VBP4+xzUt4wRwe5dt1K/5/R1QrDE7bLcoCQhHdBN9g4m81q8tMN/p32a5H9UMD/IEaHnvg
 QPk/IbymQFhGAAA=
 </chunk>
 </item>
-
 <item name="jlo.jar" md5="10cf644cde40d127ac879f597ca48218" size="20K" utc="1384482150" type="Zip archive data, at least v2.0 to extract">
 <chunk>
 H4sICMmEhVICA2psby5qYXIAnXsFVJzLsi4eNLi7u7sGd3e3wd0dgru7uwV3CO7uENzdPUDQl33O
@@ -16145,5 +16131,16 @@ ms7TosWSpXq4lwvqVu9kmkUnY3HiJoEHWcQ+DdgKiwiygdwMVSEk5I4MI4S0UMfmOXyD2cxFQesU
 mInwN9B65P+gLvXPcL9WoJD+BheO+R/WQ/0Z8tfb9d9nSILzHxSy/Ar3B3/9ei+J9xtcBv7/dkH/
 Z6xfz4SxfsOqIfq7e80/4/x6MInxG44v5V+fJ/8Z5ddEB/s3FCHqvz3S/DPQrwEb2m9AnMx/lSX9
 GePXAALzN4xWtr8J9P4M86sv/31lbDj+OvaQlwKH+EMG9efr/qcmFfcfjv7/AJGG3qI2QQAA
+</chunk>
+</item>
+
+<item name="Makefile" md5="799b18bd66acded2ccee7c9e00382948" size="4.0K" utc="1385850836" type="a /usr/bin/make -f script, ASCII text executable">
+<chunk>
+H4sICKxnmlICA01ha2VmaWxlAK1RwWrDMAw9T1+hkR6ag+NzBmEU05VBto6EseNwHScN0ewSJ4f9
+/eR2HTnsMpgPRnp69tOTkls5h1Eeeic/9GBRtABK4X2BnTGgHsrNro6ZeNNEKMLUFCbP4aXa7543
+T9tYCgNAuX//oa7W4WiZfBo6Ybxr+w6FMC3pLnBA/SEgX+RTSMTjWZ280SR7Z2huLKIoFyhTkYlE
+HgWdpuNodcMtvlb1tv6TpjPzGGyIqvQd849T71oPUFeqyCRAwq5RePaEwbpmsJ8hMxfbnZvzHJdv
+yUPyvwegsa2eabpjR9cZpwCLJFa421QusMzAzWqtVPprLfpZABxf1hqj697O6GKmrPkF0A637xoC
+AAA=
 </chunk>
 </item>
